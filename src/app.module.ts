@@ -1,13 +1,11 @@
 import { Module } from '@nestjs/common';
-import { MongooseModule } from '@nestjs/mongoose';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { ItemsModule } from './items/items.module';
+import { TypegooseModule } from 'nestjs-typegoose';
+import { ItemModule } from './item/item.module';
 import config from './config/keys';
 
 @Module({
-  imports: [MongooseModule.forRoot(config.mongoURI), ItemsModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [TypegooseModule.forRoot(config.mongoURI), ItemModule],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
