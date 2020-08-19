@@ -11,13 +11,12 @@ export class ItemController {
     return await this.itemService.transactItem(item);
   }
 
-  @Get('transactions:id')
+  @Get('transactions/:id')
   async findItem(@Param('id') barcode: string): Promise<Item[] | null> {
-    console.log(barcode);
     return await this.itemService.findItemTransactions(barcode);
   }
 
-  @Get('quantity:id')
+  @Get('quantity/:id')
   async getItemQuantity(@Param('id') barcode: string): Promise<Item[] | null> {
     return await this.itemService.getItemQuantity(barcode);
   }
