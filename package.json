@@ -8,7 +8,7 @@
     "start:dev": "nodemon",
     "build": "rimraf ./build && tsc",
     "initdb": "ts-node tools/initdb",
-    "test": "jest --forceExit --coverage --verbose",
+    "test": "jest --detectOpenHandles",
     "coverage": "jest --coverage",
     "runQuery": "ts-node ./src/utils/runQuery.ts"
   },

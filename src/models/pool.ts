@@ -7,9 +7,20 @@ const db = pgp(databaseConnectionString);
 const createTableProducts = `
   DROP TABLE IF EXISTS products;
   CREATE TABLE IF NOT EXISTS products (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR DEFAULT '',
-    barcode VARCHAR
+    id serial primary key not null,
+    name text DEFAULT '',
+    barcode text UNIQUE NOT NULL
+  );
+`;
+
+const createTableEvents = `
+  DROP TABLE IF EXISTS events;
+  CREATE TABLE IF NOT EXISTS events (
+    id serial primary key not null,
+    uuid uuid NOT NULL,
+    event text NOT NULL,
+    action jsonb NOT NULL,
+    inserted_at timestamptz NOT NULL DEFAULT now()
   );
 `;
 
@@ -22,4 +33,5 @@ const sqlQuery = async (query: string) => {
 };
 
 sqlQuery(createTableProducts);
+sqlQuery(createTableEvents);
 export default db;
