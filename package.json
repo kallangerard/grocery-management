@@ -10,7 +10,7 @@
     "initdb": "ts-node tools/initdb",
     "test": "jest --detectOpenHandles",
     "coverage": "jest --coverage",
-    "runQuery": "ts-node ./src/utils/runQuery.ts"
+    "createTables": "ts-node ./src/utils/createTables.ts"
   },
   "dependencies": {
     "@types/http-errors": "^1.8.0",
