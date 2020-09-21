@@ -1,0 +1,5 @@
+{
+  "database": {
+    "connectionString": "POSTGRES_CONNECTION_STRING"
+  }
+}
