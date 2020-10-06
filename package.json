@@ -6,14 +6,16 @@
   "license": "MIT",
   "scripts": {
     "start:dev": "nodemon",
-    "build": "rimraf ./build && tsc",
+    "build": "rimraf ./dist && tsc",
     "initdb": "ts-node tools/initdb",
-    "test": "jest --detectOpenHandles",
+    "test": "jest",
     "coverage": "jest --coverage",
-    "createTables": "ts-node ./src/utils/createTables.ts"
+    "initDb": "ts-node ./src/utils/initDatabase.ts"
   },
   "dependencies": {
+    "@types/bluebird": "^3.5.32",
     "@types/http-errors": "^1.8.0",
+    "bluebird": "^3.7.2",
     "config": "^3.3.1",
     "cookie-parser": "^1.4.5",
     "debug": "^4.1.1",
@@ -21,6 +23,7 @@
     "http-errors": "^1.8.0",
     "joi": "^17.2.1",
     "morgan": "^1.10.0",
+    "pg-monitor": "^1.4.1",
     "pg-promise": "^10.6.1",
     "pug": "^3.0.0"
   },
@@ -35,6 +38,7 @@
     "@types/supertest": "^2.0.10",
     "chai": "^4.2.0",
     "coveralls": "^3.1.0",
+    "eslint-plugin-node": "^11.1.0",
     "jest": "^26.4.2",
     "nodemon": "^2.0.4",
     "rimraf": "^3.0.2",
